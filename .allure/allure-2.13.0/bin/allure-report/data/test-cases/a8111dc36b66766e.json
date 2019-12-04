@@ -1,0 +1,129 @@
+{
+  "uid" : "a8111dc36b66766e",
+  "name" : "addNewTaskTest",
+  "fullName" : "com.example.android.architecture.blueprints.todoapp.Tests.addNewTaskTest",
+  "historyId" : "a387538765ad5aeb47b482fa60776",
+  "time" : {
+    "start" : 1575467807481,
+    "stop" : 1575467816723,
+    "duration" : 9242
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "clickButtonAdd",
+      "time" : {
+        "start" : 1575467809289,
+        "stop" : 1575467809655,
+        "duration" : 366
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ { } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "addNewTaskName",
+      "time" : {
+        "start" : 1575467809655,
+        "stop" : 1575467810896,
+        "duration" : 1241
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ { } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "addNewTaskDescription",
+      "time" : {
+        "start" : 1575467810896,
+        "stop" : 1575467812975,
+        "duration" : 2079
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ { } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "clickButtonSave",
+      "time" : {
+        "start" : 1575467812975,
+        "stop" : 1575467815422,
+        "duration" : 2447
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ { } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "check",
+      "time" : {
+        "start" : 1575467815423,
+        "stop" : 1575467815426,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ { } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 5,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.example.android.architecture.blueprints.todoapp"
+  }, {
+    "name" : "testClass",
+    "value" : "com.example.android.architecture.blueprints.todoapp.Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "addNewTaskTest"
+  }, {
+    "name" : "suite",
+    "value" : "com.example.android.architecture.blueprints.todoapp.Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a8111dc36b66766e.json",
+  "parameterValues" : [ ]
+}

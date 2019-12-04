@@ -1,0 +1,13 @@
+{
+  "afters": [],
+  "befores": [],
+  "children": [
+    "30e3b8f4-33b3-4c2e-bcde-00fa84a28310-com.example.android.architecture.blueprints.todoapp.Tests#DeleteTest",
+    "30e3b8f4-33b3-4c2e-bcde-00fa84a28310-com.example.android.architecture.blueprints.todoapp.Tests#addNewTaskTest"
+  ],
+  "links": [],
+  "name": "com.example.android.architecture.blueprints.todoapp.Tests",
+  "start": 1575467203402,
+  "stop": 1575467224265,
+  "uuid": "ad443bf4-dc7d-4a46-90e8-d00ec7d5f068"
+}

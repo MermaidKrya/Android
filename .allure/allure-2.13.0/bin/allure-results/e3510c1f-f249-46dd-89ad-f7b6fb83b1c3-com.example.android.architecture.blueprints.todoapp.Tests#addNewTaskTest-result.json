@@ -1,0 +1,93 @@
+{
+  "fullName": "com.example.android.architecture.blueprints.todoapp.Tests.addNewTaskTest",
+  "historyId": "a387538765ad5aeb47b482fa60776",
+  "labels": [
+    {
+      "name": "package",
+      "value": "com.example.android.architecture.blueprints.todoapp"
+    },
+    {
+      "name": "testClass",
+      "value": "com.example.android.architecture.blueprints.todoapp.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "addNewTaskTest"
+    },
+    {
+      "name": "suite",
+      "value": "com.example.android.architecture.blueprints.todoapp.Tests"
+    }
+  ],
+  "links": [],
+  "uuid": "e3510c1f-f249-46dd-89ad-f7b6fb83b1c3-com.example.android.architecture.blueprints.todoapp.Tests#addNewTaskTest",
+  "attachments": [],
+  "name": "addNewTaskTest",
+  "parameters": [],
+  "stage": "finished",
+  "start": 1575467807481,
+  "status": "passed",
+  "steps": [
+    {
+      "attachments": [],
+      "name": "clickButtonAdd",
+      "parameters": [
+        {}
+      ],
+      "stage": "finished",
+      "start": 1575467809289,
+      "status": "passed",
+      "steps": [],
+      "stop": 1575467809655
+    },
+    {
+      "attachments": [],
+      "name": "addNewTaskName",
+      "parameters": [
+        {}
+      ],
+      "stage": "finished",
+      "start": 1575467809655,
+      "status": "passed",
+      "steps": [],
+      "stop": 1575467810896
+    },
+    {
+      "attachments": [],
+      "name": "addNewTaskDescription",
+      "parameters": [
+        {}
+      ],
+      "stage": "finished",
+      "start": 1575467810896,
+      "status": "passed",
+      "steps": [],
+      "stop": 1575467812975
+    },
+    {
+      "attachments": [],
+      "name": "clickButtonSave",
+      "parameters": [
+        {}
+      ],
+      "stage": "finished",
+      "start": 1575467812975,
+      "status": "passed",
+      "steps": [],
+      "stop": 1575467815422
+    },
+    {
+      "attachments": [],
+      "name": "check",
+      "parameters": [
+        {}
+      ],
+      "stage": "finished",
+      "start": 1575467815423,
+      "status": "passed",
+      "steps": [],
+      "stop": 1575467815426
+    }
+  ],
+  "stop": 1575467816723
+}

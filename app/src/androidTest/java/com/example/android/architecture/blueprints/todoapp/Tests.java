@@ -22,7 +22,7 @@ public class Tests {
         ActivityScenario.launch(TasksActivity.class);
     }
 
-    @BeforeEach
+    /*@BeforeEach
     public void clearOldAllureResults() {
         File folder = new File ("C:\\Users\\a.sandler\\AppData\\Local\\Android\\Sdk\\platform-tools\\allure-results");
         File[] contents = folder.listFiles();
@@ -34,7 +34,7 @@ public class Tests {
             }
             Log.d("Setup", "Allure reports have been cleared");
         }
-    }
+    }*/
 
     @Test
     public void addNewTaskTest() throws InterruptedException {

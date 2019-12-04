@@ -116,7 +116,8 @@ dependencies {
 }
 
 String ANDROID_SDK_PLATFORM_TOOLS = "C:\\Users\\a.sandler\\AppData\\Local\\Android\\Sdk\\platform-tools"
-String ANDROID_HOME = "ANDROID_HOME=C:\\Users\\a.sandler\\AppData\\Local\\Android\\Sdk"
+String ANDROID_HOME = "C:\\Users\\a.sandler\\AppData\\Local\\Android\\Sdk"
+String PC_ALLURE_RESULTS = "C:\\Users\\a.sandler\\AppData\\Local\\Android\\Sdk\\platform-tools\\allure-results"
 
 
 task pullAllureResults(type: Exec) {
@@ -124,31 +125,35 @@ task pullAllureResults(type: Exec) {
     workingDir ANDROID_SDK_PLATFORM_TOOLS
     executable "cmd"
     environment ("ANDROID_HOME", ANDROID_HOME)
-
     String[] pullResults = ["/c", "adb", "pull", "/sdcard/allure-results"]
     args pullResults
-
     mustRunAfter("connectedAndroidTest")
 }
-
 task moveAllureResults(type: Copy) {
     group = "custom"
-
     from file("$ANDROID_SDK_PLATFORM_TOOLS/allure-results")
-    into file("$projectDir/build/allure-results")
-
+    into file("C:\\Users\\a.sandler\\IdeaProjects\\android-testing\\.allure\\allure-2.13.0\\bin\\allure-results")
     mustRunAfter("pullAllureResults")
 }
 
+task cleanSdcard(type: Exec) {
+    group = "custom"
+    workingDir ANDROID_SDK_PLATFORM_TOOLS
+    executable "cmd"
+    environment ("ANDROID_HOME", ANDROID_HOME)
+    //while allure-results does not exist
+    setIgnoreExitValue(true)
+    String[] delete = ["/c", "adb", "shell", "rm", "-r", "sdcard/allure-results"]
+    args delete
+}
 task cleanReports(type: Delete) {
     group = "custom"
-    delete("$projectDir/build/reports", "$projectDir/build/allure-results")
-    mustRunAfter("cleanConnectedAndroidTest")
+    delete("C:\\Users\\a.sandler\\IdeaProjects\\android-testing\\.allure\\allure-2.13.0\\bin\\allure-report", "C:\\Users\\a.sandler\\IdeaProjects\\android-testing\\.allure\\allure-2.13.0\\bin\\allure-results", PC_ALLURE_RESULTS)
+    mustRunAfter("cleanConnectedAndroidTest", "cleanSdcard")
 }
-
-
 import io.qameta.allure.gradle.task.AllureReport
 task customAllureReport(type: AllureReport) {
     group = "custom"
     mustRunAfter("connectedAndroidTest", "moveAllureResults")
 }
+
