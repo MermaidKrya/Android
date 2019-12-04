@@ -6,154 +6,171 @@ apply plugin: 'io.qameta.allure'
 apply plugin: 'de.mannodermaus.android-junit5'
 
 android {
-    compileSdkVersion rootProject.compileSdkVersion
+	compileSdkVersion rootProject.compileSdkVersion
 
-    defaultConfig {
-        applicationId "com.example.android.architecture.blueprints.reactive"
-        minSdkVersion rootProject.minSdkVersion
-        targetSdkVersion rootProject.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "io.qameta.allure.espresso.AllureAndroidRunner"
-        testInstrumentationRunnerArgument "runnerBuilder", "de.mannodermaus.junit5.AndroidJUnit5Builder"
-        //testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+	defaultConfig {
+		applicationId "com.example.android.architecture.blueprints.reactive"
+		minSdkVersion rootProject.minSdkVersion
+		targetSdkVersion rootProject.targetSdkVersion
+		versionCode 1
+		versionName "1.0"
+		testInstrumentationRunner "io.qameta.allure.espresso.AllureAndroidRunner"
+		testInstrumentationRunnerArgument "runnerBuilder", "de.mannodermaus.junit5.AndroidJUnit5Builder"
+		//testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+	}
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
 
-    dataBinding {
-        enabled = true
-        enabledForTests = true
-    }
+	dataBinding {
+		enabled = true
+		enabledForTests = true
+	}
 
-    compileOptions {
-        sourceCompatibility = '1.8'
-        targetCompatibility = '1.8'
-    }
+	compileOptions {
+		sourceCompatibility = '1.8'
+		targetCompatibility = '1.8'
+	}
 
-    packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE.md'
-        exclude 'META-INF/LICENSE-notice.md'
-    }
+	packagingOptions {
+		exclude 'META-INF/DEPENDENCIES'
+		exclude 'META-INF/LICENSE.md'
+		exclude 'META-INF/LICENSE-notice.md'
+	}
 
-    adbOptions {
-        installOptions "-g"
-    }
+	adbOptions {
+		installOptions "-g"
+	}
 
 }
 
 allure {
-    autoconfigure = true    //флаг, на разрешение автоконфигурации. Плагин пытется найти интеграцию тестовой платформы.
-    version = '2.13.0'       //необходимая версия
-    configuration = "testImplementation"
-    useJUnit5 {
-        version = '2.13.0' //последняя версия адаптера junit для allure
-    }
+	autoconfigure = true    //флаг, на разрешение автоконфигурации. Плагин пытется найти интеграцию тестовой платформы.
+	version = '2.13.0'       //необходимая версия
+	configuration = "testImplementation"
+	useJUnit5 {
+		version = '2.13.0' //последняя версия адаптера junit для allure
+	}
 }
 
 repositories {
-    mavenCentral()
-    maven { url 'https://dl.bintray.com/qameta/maven' }
+	mavenCentral()
+	maven { url 'https://dl.bintray.com/qameta/maven' }
 }
 
 dependencies {
 
-    // App dependencies
-    implementation "androidx.appcompat:appcompat:$appCompatVersion"
-    implementation "androidx.cardview:cardview:$cardVersion"
-    implementation "com.google.android.material:material:$materialVersion"
-    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
-    implementation "androidx.annotation:annotation:$androidXAnnotations"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-    implementation "com.jakewharton.timber:timber:$timberVersion"
-    implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
-    implementation "androidx.room:room-runtime:$roomVersion"
-    kapt "androidx.room:room-compiler:$roomVersion"
+	// App dependencies
+	implementation "androidx.appcompat:appcompat:$appCompatVersion"
+	implementation "androidx.cardview:cardview:$cardVersion"
+	implementation "com.google.android.material:material:$materialVersion"
+	implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+	implementation "androidx.annotation:annotation:$androidXAnnotations"
+	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+	implementation "com.jakewharton.timber:timber:$timberVersion"
+	implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
+	implementation "androidx.room:room-runtime:$roomVersion"
+	kapt "androidx.room:room-compiler:$roomVersion"
 
-    // Architecture Components
-    implementation "androidx.room:room-runtime:$roomVersion"
-    kapt "androidx.room:room-compiler:$roomVersion"
-    implementation "androidx.room:room-ktx:$roomVersion"
-    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
-    kapt "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$archLifecycleVersion"
-    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
-    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+	// Architecture Components
+	implementation "androidx.room:room-runtime:$roomVersion"
+	kapt "androidx.room:room-compiler:$roomVersion"
+	implementation "androidx.room:room-ktx:$roomVersion"
+	implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
+	kapt "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
+	implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"
+	implementation "androidx.lifecycle:lifecycle-livedata-ktx:$archLifecycleVersion"
+	implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+	implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
 
-    testImplementation group: 'androidx.test', name: 'runner', version: '1.2.0'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.5.2'
-    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
+	testImplementation group: 'androidx.test', name: 'runner', version: '1.2.0'
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.5.2'
+	testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
 
-    // AndroidX Test - Instrumented testing
-    androidTestImplementation "androidx.test.ext:junit:$androidXTestExtKotlinRunnerVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+	// AndroidX Test - Instrumented testing
+	androidTestImplementation "androidx.test.ext:junit:$androidXTestExtKotlinRunnerVersion"
+	androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
 
-    androidTestImplementation 'androidx.test:core:1.0.0'
+	androidTestImplementation 'androidx.test:core:1.0.0'
 
-    androidTestImplementation group: 'androidx.test', name: 'runner', version: '1.2.0'
-    androidTestImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
-    androidTestImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.5.2'
-    androidTestRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
+	androidTestImplementation group: 'androidx.test', name: 'runner', version: '1.2.0'
+	androidTestImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
+	androidTestImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.5.2'
+	androidTestRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
 
-    androidTestCompile "io.qameta.allure:allure-android-commons:2.0.0"
-    androidTestCompile "io.qameta.allure:allure-android-model:2.0.0"
-    androidTestCompile "io.qameta.allure:allure-espresso:2.0.0"
+	androidTestCompile "io.qameta.allure:allure-android-commons:2.0.0"
+	androidTestCompile "io.qameta.allure:allure-android-model:2.0.0"
+	androidTestCompile "io.qameta.allure:allure-espresso:2.0.0"
 
-    androidTestImplementation "de.mannodermaus.junit5:android-test-core:1.2.0"
-    androidTestRuntimeOnly "de.mannodermaus.junit5:android-test-runner:1.2.0"
+	androidTestImplementation "de.mannodermaus.junit5:android-test-core:1.2.0"
+	androidTestRuntimeOnly "de.mannodermaus.junit5:android-test-runner:1.2.0"
 
-    // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-    implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+	// Kotlin
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+	implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
 }
 
-String ANDROID_SDK_PLATFORM_TOOLS = "C:\\Users\\a.sandler\\AppData\\Local\\Android\\Sdk\\platform-tools"
-String ANDROID_HOME = "C:\\Users\\a.sandler\\AppData\\Local\\Android\\Sdk"
-String PC_ALLURE_RESULTS = "C:\\Users\\a.sandler\\AppData\\Local\\Android\\Sdk\\platform-tools\\allure-results"
+String ANDROID_SDK_PLATFORM_TOOLS = "C:\\Users\\r.v.vlasov\\AppData\\Local\\Android\\Sdk\\platform-tools"
+String ANDROID_HOME = "C:\\Users\\r.v.vlasov\\AppData\\Local\\Android\\Sdk"
+String PC_ALLURE_RESULTS = "C:\\Users\\r.v.vlasov\\AppData\\Local\\Android\\Sdk\\platform-tools\\allure-results"
 
 
 task pullAllureResults(type: Exec) {
-    group = "custom"
-    workingDir ANDROID_SDK_PLATFORM_TOOLS
-    executable "cmd"
-    environment ("ANDROID_HOME", ANDROID_HOME)
-    String[] pullResults = ["/c", "adb", "pull", "/sdcard/allure-results"]
-    args pullResults
-    mustRunAfter("connectedAndroidTest")
+	group = "custom"
+	workingDir ANDROID_SDK_PLATFORM_TOOLS
+	executable "cmd"
+	environment ("ANDROID_HOME", ANDROID_HOME)
+	String[] pullResults = ["/c", "adb", "pull", "/sdcard/allure-results"]
+	args pullResults
+	mustRunAfter("connectedAndroidTest")
 }
+
 task moveAllureResults(type: Copy) {
-    group = "custom"
-    from file("$ANDROID_SDK_PLATFORM_TOOLS/allure-results")
-    into file("C:\\Users\\a.sandler\\IdeaProjects\\android-testing\\.allure\\allure-2.13.0\\bin\\allure-results")
-    mustRunAfter("pullAllureResults")
+	group = "custom"
+	from file("$ANDROID_SDK_PLATFORM_TOOLS/allure-results")
+	into file("C:\\trial\\MobileDemonstrator\\Espresso\\.allure\\allure-2.13.0\\bin\\allure-results")
+	mustRunAfter("pullAllureResults")
 }
 
 task cleanSdcard(type: Exec) {
-    group = "custom"
-    workingDir ANDROID_SDK_PLATFORM_TOOLS
-    executable "cmd"
-    environment ("ANDROID_HOME", ANDROID_HOME)
-    //while allure-results does not exist
-    setIgnoreExitValue(true)
-    String[] delete = ["/c", "adb", "shell", "rm", "-r", "sdcard/allure-results"]
-    args delete
+	group = "custom"
+	workingDir ANDROID_SDK_PLATFORM_TOOLS
+	executable "cmd"
+	environment ("ANDROID_HOME", ANDROID_HOME)
+	//while allure-results does not exist
+	setIgnoreExitValue(true)
+	String[] delete = ["/c", "adb", "shell", "rm", "-r", "sdcard/allure-results"]
+	args delete
 }
+
 task cleanReports(type: Delete) {
-    group = "custom"
-    delete("C:\\Users\\a.sandler\\IdeaProjects\\android-testing\\.allure\\allure-2.13.0\\bin\\allure-report", "C:\\Users\\a.sandler\\IdeaProjects\\android-testing\\.allure\\allure-2.13.0\\bin\\allure-results", PC_ALLURE_RESULTS)
-    mustRunAfter("cleanConnectedAndroidTest", "cleanSdcard")
+	group = "custom"
+	delete("C:\\Users\\a.sandler\\IdeaProjects\\android-testing\\.allure\\allure-2.13.0\\bin\\allure-report", "C:\\Users\\a.sandler\\IdeaProjects\\android-testing\\.allure\\allure-2.13.0\\bin\\allure-results", PC_ALLURE_RESULTS)
+	mustRunAfter("cleanConnectedAndroidTest", "cleanSdcard")
 }
-import io.qameta.allure.gradle.task.AllureReport
-task customAllureReport(type: AllureReport) {
-    group = "custom"
-    mustRunAfter("connectedAndroidTest", "moveAllureResults")
+
+task customAllureReport(type: Exec) {
+	group = "custom"
+	workingDir "C:\\trial\\MobileDemonstrator\\Espresso\\.allure\\allure-2.13.0\\bin"
+	
+	executable "cmd"
+	String[] generate = ["/c", "allure", "generate", "--clean", "-o", "allure-report"]
+	args generate
+	
+	mustRunAfter("connectedAndroidTest", "moveAllureResults")
+}
+
+task replaceAllureReport(type: Copy) {
+	group = "custom"
+
+	from file("C:\\trial\\MobileDemonstrator\\Espresso\\.allure\\allure-2.13.0\\bin\\allure-report")
+	into file("C:\\trial\\MobileDemonstrator\\Espresso\\app\\build\\reports\\allure-report")
+
+	mustRunAfter("customAllureReport")
 }
 

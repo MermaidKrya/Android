@@ -8,3 +8,4 @@ build
 .java_pid22280.hprof
 .settings/	
 .classpath
+.allure/
