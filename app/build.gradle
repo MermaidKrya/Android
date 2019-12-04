@@ -174,3 +174,6 @@ task replaceAllureReport(type: Copy) {
 	mustRunAfter("customAllureReport")
 }
 
+//tasks to run
+//cleanConnectedAndroidTest cleanReport cleanSdcard connectedAndroidTest pullAllureResults moveAllureResults allureReport
+
